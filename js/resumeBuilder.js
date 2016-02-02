@@ -92,6 +92,8 @@ This is empty on purpose! Your code to build the resume will go here.
    $("#skills").append(formattedSkill);
  }
 
+function displayWork() {
+
  for (job in work.jobs) {
    $("#workExperience").append(HTMLworkStart);
 
@@ -110,3 +112,7 @@ This is empty on purpose! Your code to build the resume will go here.
    $(".work-entry:last").append(formattedworkLocation);
    $(".work-entry:last").append(formattedworkDescription);
  }
+
+}
+
+displayWork();
