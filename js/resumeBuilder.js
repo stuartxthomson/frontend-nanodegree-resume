@@ -34,7 +34,7 @@ This is empty on purpose! Your code to build the resume will go here.
        "city" : "Ottawa, Ontario",
        "degree" : "Diploma",
        "majors" : "Aboriginal Studies",
-       "dates" : 2010,
+       "dates" : 2009,
        "url" : "http://www.algonquincollege.com"
      }
    ]
@@ -69,4 +69,23 @@ This is empty on purpose! Your code to build the resume will go here.
        ]
      }
    ]
+ }
+
+ $("#header").append(HTMLheaderName.replace("%data%", bio.name));
+
+ if(bio.skills.length > 0) {
+
+   $("#header").append(HTMLskillsStart);
+
+   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+   $("#skills").append(formattedSkill);
+
+   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+   $("#skills").append(formattedSkill);
+
+   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+   $("#skills").append(formattedSkill);
+
+   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+   $("#skills").append(formattedSkill);
  }
