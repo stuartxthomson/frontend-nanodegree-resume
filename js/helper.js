@@ -14,6 +14,7 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
+
 /*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
