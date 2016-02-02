@@ -46,12 +46,14 @@ This is empty on purpose! Your code to build the resume will go here.
        "employer" : "Edmonton Journal",
        "title" : "Website editor",
        "dates" : "October, 2011 - Present",
+       "location" : "Edmonton, Alberta",
        "description" : "I've worked on web strategy, ebooks, mini-documentaries, and edited hundreds of stories in that time. I am currently responsible for the Edmonton Journal's website, the main twitter feed and the paper's Facebook page. A memo I wrote about getting the most out of Facebook was quickly adopted by Postmedia as the strategy for the whole chain of newspapers."
      },
      {
        "employer" : "Whitecourt Star",
        "title" : "Reporter/Editor",
        "dates" : "September, 2010 - October, 2011",
+       "location" : "Whitecourt, Alberta",
        "description" : "Reported on and photographed the communities surrounding Whitecourt and Mayerthorpe."
      }
    ]
@@ -97,5 +99,14 @@ This is empty on purpose! Your code to build the resume will go here.
    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
    var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
+   var formattedworkDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+
+   var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+
+   var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
    $(".work-entry:last").append(formattedEmployerTitle);
+   $(".work-entry:last").append(formattedworkDate);
+   $(".work-entry:last").append(formattedworkLocation);
+   $(".work-entry:last").append(formattedworkDescription);
  }
