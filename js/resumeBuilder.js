@@ -117,6 +117,43 @@ function displayWork() {
 
 displayWork();
 
+projects.display = function() {
+  for (project in projects.projects) {
+
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedprojectTitle);
+
+    var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedprojectDates);
+
+    var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedprojectDescription);
+
+    if (projects.projects[project].images.length > 0) {
+      for (image in projects.projects[project].images) {
+        var formattedprojectImage = HTMLprojectImage.replace("%data", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+
+  }
+}
+
+
+
+
+// var HTMLprojectStart = '<div class="project-entry"></div>';
+// var HTMLprojectTitle = '<a href="#">%data%</a>';
+// var HTMLprojectDates = '<div class="date-text">%data%</div>';
+// var HTMLprojectDescription = '<p><br>%data%</p>';
+// var HTMLprojectImage = '<img src="%data%">';
+
+
+
+projects.display();
+
 function inName(name) {
   name = name.trim().split(" ");
   console.log(name);

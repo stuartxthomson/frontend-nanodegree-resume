@@ -14,6 +14,10 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
+/*
+This is empty on purpose! Your code to build the resume will go here.
+ */
+
 
 /*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
