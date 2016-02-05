@@ -170,7 +170,7 @@ education.display = function() {
 
     var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
     var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-    var formattedschoolCity = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    var formattedschoolCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
     var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
     var formattedschoolMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 
@@ -188,13 +188,16 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
-function inName(name) {
+function inName() {
+  var name = window.name;
   name = name.trim().split(" ");
   console.log(name);
   name[1] = name[1].toUpperCase();
   name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 
-  return name[0] +" "+name[1];
+  return name[0] +" "+ name[1];
 }
 
-$("#main").append(internationalizeButton);
+var name = $("#name").text();
+
+$('#main').append(internationalizeButton);
