@@ -88,17 +88,12 @@ bio.display();
 work.display = function() {
     for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[
-            job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job]
-            .title);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
-        var formattedworkDate = HTMLworkDates.replace("%data%", work.jobs[
-            job].dates);
-        var formattedworkLocation = HTMLworkLocation.replace("%data%", work
-            .jobs[job].location);
-        var formattedworkDescription = HTMLworkDescription.replace("%data%",
-            work.jobs[job].description);
+        var formattedworkDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedEmployerTitle);
         $(".work-entry:last").append(formattedworkDate);
         $(".work-entry:last").append(formattedworkLocation);
@@ -109,14 +104,11 @@ work.display();
 projects.display = function() {
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
-        var formattedprojectTitle = HTMLprojectTitle.replace("%data%",
-            projects.projects[project].title);
+        var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
         $(".project-entry:last").append(formattedprojectTitle);
-        var formattedprojectDates = HTMLprojectDates.replace("%data%",
-            projects.projects[project].dates);
+        var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
         $(".project-entry:last").append(formattedprojectDates);
-        var formattedprojectDescription = HTMLprojectDescription.replace(
-            "%data%", projects.projects[project].description);
+        var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         $(".project-entry:last").append(formattedprojectDescription);
         // if (projects.projects[project].images.length > 0) {
         //   for (image in projects.projects[project].images) {
@@ -130,18 +122,12 @@ projects.display();
 education.display = function() {
     for (school in education.schools) {
         $("#education").append(HTMLschoolStart);
-        var formattedschoolName = HTMLschoolName.replace("%data%",
-            education.schools[school].name);
-        var formattedschoolDates = HTMLschoolDates.replace("%data%",
-            education.schools[school].dates);
-        var formattedschoolCity = HTMLschoolLocation.replace("%data%",
-            education.schools[school].city);
-        var formattedschoolDegree = HTMLschoolDegree.replace("%data%",
-            education.schools[school].degree);
-        var formattedschoolMajors = HTMLschoolMajor.replace("%data%",
-            education.schools[school].majors);
-        $(".education-entry:last").append(formattedschoolName +
-            formattedschoolDegree);
+        var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+        var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        var formattedschoolCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+        var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        var formattedschoolMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+        $(".education-entry:last").append(formattedschoolName + formattedschoolDegree);
         $(".education-entry:last").append(formattedschoolDates);
         $(".education-entry:last").append(formattedschoolCity);
         $(".education-entry:last").append(formattedschoolMajors);
