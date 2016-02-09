@@ -14,7 +14,7 @@ var bio = {
     "welcomeMessage": "Welcome to my wonderful resume!",
     "skills": ["Writing", "HTML5", "CSS", "Javacript (kinda)"],
     "bioPic": "images/stuart.jpg"
-}
+};
 var education = {
     "schools": [{
         "name": "Algonquin College",
@@ -31,7 +31,7 @@ var education = {
         "dates": 2009,
         "url": "http://www.algonquincollege.com"
     }]
-}
+};
 var work = {
     "jobs": [{
         "employer": "Edmonton Journal",
@@ -46,7 +46,7 @@ var work = {
         "location": "Whitecourt, Alberta",
         "description": "Reported on and photographed the communities surrounding Whitecourt and Mayerthorpe."
     }]
-}
+};
 var projects = {
     "projects": [{
         "title": "Sample Project I",
@@ -57,7 +57,7 @@ var projects = {
             //    "images/photo2.jpeg"
             //  ]
     }]
-}
+};
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
@@ -80,13 +80,13 @@ bio.display = function() {
     formattedContacts.push(HTMLgithub.replace("%data%", bio.contacts.github));
     formattedContacts.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
     formattedContacts.push(HTMLlocation.replace("%data%", bio.contacts.location));
-    for (item in formattedContacts) {
+    for (var item in formattedContacts) {
         $("#topContacts").append(formattedContacts[item]);
     }
-}
+};
 bio.display();
 work.display = function() {
-    for (job in work.jobs) {
+    for (var job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -99,10 +99,10 @@ work.display = function() {
         $(".work-entry:last").append(formattedworkLocation);
         $(".work-entry:last").append(formattedworkDescription);
     }
-}
+};
 work.display();
 projects.display = function() {
-    for (project in projects.projects) {
+    for (var project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
         var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
         $(".project-entry:last").append(formattedprojectTitle);
@@ -117,10 +117,10 @@ projects.display = function() {
         //   }
         // }
     }
-}
+};
 projects.display();
 education.display = function() {
-    for (school in education.schools) {
+    for (var school in education.schools) {
         $("#education").append(HTMLschoolStart);
         var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
         var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
@@ -133,7 +133,7 @@ education.display = function() {
         $(".education-entry:last").append(formattedschoolMajors);
         /*    $(".education-entry:last").append(formattedschoolDegree); */
     }
-}
+};
 education.display();
 $("#mapDiv").append(googleMap);
 
